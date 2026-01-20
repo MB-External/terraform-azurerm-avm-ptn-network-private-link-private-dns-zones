@@ -16,8 +16,7 @@ module "regions" {
 }
 
 module "avm_res_network_privatednszone" {
-  source   = "Azure/avm-res-network-privatednszone/azurerm"
-  version  = "0.4.3"
+  source   = "git::https://github.com/MB-External/terraform-azurerm-avm-res-network-privatednszone.git?ref=36ae30162ae7c2ff5af72f54fe98ec849e411f0b"
   for_each = local.private_link_private_dns_zones_final
 
   domain_name           = each.value.zone_name
